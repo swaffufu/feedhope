@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Basic -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Site Metas -->
+    <title>Donation Page</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <!-- Site Icons -->
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <!-- Navigation bar -->
+    <div id="nav-placeholder"></div>
+    <script>
+      $(function () {
+        $("#nav-placeholder").load("nav.php");
+      });
+    </script>
+    <!-- End Navigation bar -->
+
+    <!-- Donation Page Content -->
+    <div class="all-page-title page-breadcrumb">
+      <div class="container text-center">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="col-lg-12 text-center mt-5">
+              <h1 class="display-4">Help Feed Families in Need</h1>
+              <p class="lead">
+                Every dollar you give helps provide at least 10 meals to
+                families in need.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End All Pages -->
+
+    <!-- Donation Form Selection -->
+    <div class="menu-box">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="heading-title text-center">
+              <h2>Choose Your Donation Type</h2>
+            </div>
+            <div class="special-menu text-center">
+              <div class="button-group filter-button-group">
+                <button id="donateMoney">Donate Money</button>
+                <button id="donateFood">Donate Food</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Donation Form Selection -->
+
+    <!-- Money Donation Form -->
+    <div class="menu-box" id="moneyDonationForm" style="display: none">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 offset-lg-2">
+            <form action="../feedhope/donation-process.php" method="POST">
+              <input type="hidden" name="donation_type" value="money" />
+
+              <!-- Donation Amount Selection -->
+              <div class="form-group">
+                <label for="amount">Select Amount (MYR)</label>
+                <div class="special-menu text-center" data-toggle="buttons">
+                  <label class="button-group filter-button-group">
+                    <input
+                      type="button"
+                      class="donation-amount"
+                      onclick="setAmount(10)"
+                      value="RM 10"
+                    />
+                  </label>
+                  <label class="button-group filter-button-group">
+                    <input
+                      type="button"
+                      class="donation-amount"
+                      onclick="setAmount(25)"
+                      value="RM 25"
+                    />
+                  </label>
+                  <label class="button-group filter-button-group">
+                    <input
+                      type="button"
+                      class="donation-amount"
+                      onclick="setAmount(50)"
+                      value="RM 50"
+                    />
+                  </label>
+                  <label class="button-group filter-button-group">
+                    <input
+                      type="button"
+                      class="donation-amount"
+                      onclick="setAmount(60)"
+                      value="RM 60"
+                    />
+                  </label>
+                  <label class="button-group filter-button-group">
+                    <input
+                      type="button"
+                      class="donation-amount"
+                      onclick="setAmount(75)"
+                      value="RM 75"
+                    />
+                  </label>
+                  <label class="button-group filter-button-group">
+                    <input
+                      type="button"
+                      class="donation-amount"
+                      onclick="setAmount(100)"
+                      value="RM 100"
+                    />
+                  </label>
+                </div>
+              </div>
+              <!-- End Donation Amount Selection -->
+
+              <!-- Amount Input Field -->
+              <div class="form-group">
+                <label for="amount">Or Enter Amount</label>
+                <div class="input-group">
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="amount"
+                    name="amount"
+                    placeholder="Enter amount"
+                    required
+                  />
+                </div>
+              </div>
+              <!-- End Amount Input Field -->
+
+              <!-- Donor Information -->
+              <div class="form-group">
+                <label for="name">Your Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="name"
+                  name="name"
+                  placeholder="Enter your name"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="email">Your Email</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  name="email"
+                  placeholder="Enter your email"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="phone">Your Phone Number</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="phone"
+                  name="phone"
+                  placeholder="Enter your phone number"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="message">Message (optional)</label>
+                <textarea
+                  class="form-control"
+                  id="message"
+                  name="message"
+                  rows="3"
+                  placeholder="Write a message"
+                ></textarea>
+              </div>
+              <!-- End Donor Information -->
+
+              <!-- Bank Details Section -->
+              <div class="card">
+                <div class="card-body">
+                  <h3>Bank Transfer Details</h3>
+                  <div class="form-group">
+                    <label for="bank_name">Bank Name</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="bank_name"
+                      name="bank_name"
+                      placeholder="Enter bank name"
+                      required
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="account_name">Account Name</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="account_name"
+                      name="account_name"
+                      placeholder="Enter account name"
+                      required
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="account_number">Account Number</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="account_number"
+                      name="account_number"
+                      placeholder="Enter account number"
+                      required
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="reference">Reference</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="reference"
+                      name="reference"
+                      placeholder="Enter reference (e.g., Your Name)"
+                      required
+                    />
+                  </div>
+                </div>
+              </div>
+              <!-- End Bank Details Section -->
+
+              <!-- Submit Button -->
+              <button
+                type="submit"
+                name="money_donation"
+                class="btn btn-primary mt-3"
+              >
+                Donate Money
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Money Donation Form -->
+
+    <!-- JavaScript to set amount when button is clicked -->
+    <script>
+      function setAmount(amount) {
+        document.getElementById("amount").value = amount;
+      }
+    </script>
+
+    <!-- Food Donation Form -->
+    <div class="menu-box" id="foodDonationForm" style="display: none">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 offset-lg-2">
+            <form action="../feedhope/donation-process.php" method="POST">
+              <input type="hidden" name="donation_type" value="food" />
+
+              <div class="form-group">
+                <label for="food_category">Food Category</label>
+                <select
+                  class="form-control"
+                  id="food_category"
+                  name="food_category"
+                >
+                  <option value="fruits">Fruits</option>
+                  <option value="vegetables">Vegetables</option>
+                  <option value="grains">Grains</option>
+                  <option value="dairy">Dairy Products</option>
+                  <option value="protein">Protein Sources</option>
+                  <option value="snacks">Snacks</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="food_name">Food Item</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="food_name"
+                  name="food_name"
+                  placeholder="e.g., Apples, Rice, Milk"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="quantity">Quantity</label>
+                <div class="input-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="quantity"
+                    name="quantity"
+                    placeholder="e.g., 10 biji, 5 kg"
+                    required
+                  />
+                  <div class="input-group-append">
+                    <span class="input-group-text" id="quantity_unit"
+                      >Unit</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="name">Your Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="name"
+                  name="name"
+                  placeholder="Enter your name"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="email">Your Email</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  name="email"
+                  placeholder="Enter your email"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="phone">Your Phone Number</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="phone"
+                  name="phone"
+                  placeholder="Enter your phone number"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="message">Message (optional)</label>
+                <textarea
+                  class="form-control"
+                  id="message"
+                  name="message"
+                  rows="3"
+                  placeholder="Write a message"
+                ></textarea>
+              </div>
+
+              <button
+                type="submit"
+                name="food_donation"
+                class="btn btn-primary mt-3"
+              >
+                Donate Food
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Food Donation Form -->
+
+    <!-- Footer -->
+    <div id="end-placeholder"></div>
+    <script>
+      $(function () {
+        $("#end-placeholder").load("end.html");
+      });
+
+      // Toggle between money and food donation forms
+      $("#donateMoney").click(function () {
+        $("#moneyDonationForm").show();
+        $("#foodDonationForm").hide();
+      });
+
+      $("#donateFood").click(function () {
+        $("#moneyDonationForm").hide();
+        $("#foodDonationForm").show();
+      });
+
+      // Update quantity unit based on food category selection
+      document
+        .getElementById("food_category")
+        .addEventListener("change", function () {
+          var category = this.value;
+          var unit = "";
+          switch (category) {
+            case "fruits":
+              unit = "biji";
+              break;
+            case "dairy":
+              unit = "kg";
+              break;
+            // Add more cases as needed
+            default:
+              unit = "Unit";
+              break;
+          }
+          document.getElementById("quantity_unit").textContent = unit;
+        });
+    </script>
+    <!-- End Footer -->
+
+    <!-- Bootstrap JS -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
