@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Basic -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Site Metas -->
+    <title>Recipient</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <!-- Site Icons -->
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Pickadate CSS -->
+    <link rel="stylesheet" href="css/classic.css" />
+    <link rel="stylesheet" href="css/classic.date.css" />
+    <link rel="stylesheet" href="css/classic.time.css" />
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="css/responsive.css" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/custom.css" />
+
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <!--Navigation bar-->
+    <div id="nav-placeholder"></div>
+
+    <script>
+      $(function () {
+        $("#nav-placeholder").load("nav.php");
+      });
+    </script>
+    <!--end of Navigation bar-->
+
+    <!-- Start All Pages -->
+    <div class="all-page-title page-breadcrumb">
+      <div class="container text-center">
+        <div class="row">
+          <div class="col-lg-12">
+            <h1>Receive</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End All Pages -->
+
+    <!-- Start Menu -->
+    <div class="menu-box" >
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="heading-title text-center">
+              <h2>Are you a student or a community member?</h2>
+              <p>
+                For students of UiTM Segamat, please click student. For
+                community members of Segamat, click community.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="special-menu text-center">
+              <div class="button-group filter-button-group">
+                <button id=communitybtn >Community</button>
+                <button id=studentbtn >Student</button>
+              </div>
+            </div>
+          </div>
+        </div>
+<!-- COMMUNITY -->    
+  <div class="row special-list">
+    <div class="reservation-box special-grid" id="community"style="width: 100%;" >
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 col-sm-12 col-xs-12">
+            <div class="contact-block">
+              <form action="form-process.php" method="POST">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3>For approved requests, your donations will be sent to this address</h3>
+                        <div class="col-md-12">
+                            <div id="mehmeh" class="form-group">
+                                <input
+                                    id="input_address"
+                                    class="address form-control"
+                                    name="address"
+                                    required
+                                    data-error="Please enter Address"
+                                />
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <h3>Donation Request Details</h3>
+                            <div id="mehmeh" class="form-group">
+                                <input
+                                    id="details"
+                                    class="details form-control"
+                                    name="details"
+                                    required
+                                    data-error="Please enter your request details."
+                                />
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <select
+                                    class="custom-select d-block form-control"
+                                    id="person"
+                                    name="dependents"
+                                    required
+                                    data-error="Please select Dependents"
+                                >
+                                    <option disabled selected>
+                                        How many dependents in your family? (Max 5)*
+                                    </option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <h3>Contact Details</h3>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="name"
+                                    name="name"
+                                    placeholder="Your Name"
+                                    required
+                                    data-error="Please enter your name"
+                                />
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <input
+                                    type="email"
+                                    placeholder="Your Email"
+                                    id="email"
+                                    class="form-control"
+                                    name="email"
+                                    required
+                                    data-error="Please enter your email"
+                                />
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <input
+                                    type="text"
+                                    placeholder="Your Phone Number"
+                                    id="phone"
+                                    class="form-control"
+                                    name="phone"
+                                    required
+                                    data-error="Please enter your Phone Number"
+                                />
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <input
+                                    type="text"
+                                    placeholder="Your IC Number"
+                                    id="ic"
+                                    class="form-control"
+                                    name="ic"
+                                    required
+                                    data-error="Please enter your IC"
+                                />
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="submit-button text-center">
+                            <button class="btn btn-common" id="submit" type="submit" name="community_submit">
+                                Apply
+                            </button>
+                            <div id="msgSubmit" class="h3 text-center hidden"></div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+          
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+<!--STUDENT-->
+<div class="row special-list">
+  <div class="reservation-box special-grid" id="student" style="width: 100%;" >
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 col-sm-12 col-xs-12">
+          <div class="contact-block">
+            <form action="form-process.php"  method="POST">
+              <div class="row">
+                <div class="col-md-12">
+                  <h3>Your request will be sent through the Zakat Unit of UiTM Segamat.</h3>
+                  <div class="col-md-12">
+                    <h3>Donation Request Details</h3>
+                    <div id="mehmeh" class="form-group">
+                      <input
+                        id="details"
+                        name="details"
+                        class="details form-control"
+                        placeholder="I need..."
+                        required
+                        data-error="Please enter your request details."
+                      />
+                      <div class="help-block with-errors"></div>
+                    </div>
+                  </div>
+                <div class="col-md-6">
+                  <h3>Contact Details</h3>
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="name"
+                        name="name"
+                        placeholder="Your Name"
+                        required
+                        data-error="Please enter your name"
+                      />
+                      <div class="help-block with-errors"></div>
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <input
+                        type="text"
+                        placeholder="Your Student Email"
+                        id="email"
+                        class="form-control"
+                        name="email"
+                        required
+                        data-error="Please enter your email"
+                      />
+                      <div class="help-block with-errors"></div>
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <input
+                        type="text"
+                        placeholder="Your Phone Number"
+                        id="phone"
+                        class="form-control"
+                        name="phone"
+                        required
+                        data-error="Please enter your Phone Numbar"
+                      />
+                      <div class="help-block with-errors"></div>
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <input
+                        type="text"
+                        placeholder="Your Matrix Number"
+                        id="matrix"
+                        class="form-control"
+                        name="matrix"
+                        required
+                        data-error="Please enter your Matrix Numbar"
+                      />
+                      <div class="help-block with-errors"></div>
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <input
+                        type="text"
+                        placeholder="Your Course"
+                        id="course"
+                        class="form-control"
+                        name="course"
+                        required
+                        data-error="Please enter your Course"
+                      />
+                      <div class="help-block with-errors"></div>
+                    </div>
+                  </div>
+                  <div class="col-md-5">
+                    <div class="form-group">
+                      <select
+                        class="custom-select d-block form-control"
+                        id="semester"
+                        name="semester"
+                        required
+                        data-error="Please select Dependents"
+                      >
+                        <option disabled selected>
+                          Current Semester? 
+                        </option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                      </select>
+                      <div class="help-block with-errors"></div>
+                    </div>
+                  </div>
+                </div>
+                
+
+                <div class="col-md-12">
+                  <div class="submit-button text-center">
+                    <button class="btn btn-common" id="submit" type="submit" name="student_submit">
+                      Apply
+                    </button>
+                    <div id="msgSubmit" class="h3 text-center hidden"></div>
+                    <div class="clearfix"></div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+</div></div>
+</div>
+    <!--End bar-->
+    <div id="end-placeholder"></div>
+    <script>
+      $("#community").hide();
+      $("#student").hide();
+
+      $("#communitybtn").click(function () {
+        $("#community").show();
+        $("#student").hide();
+      });
+
+      $("#studentbtn").click(function () {
+        $("#community").hide();
+        $("#student").show();
+      });
+      $(function () {
+        $("#end-placeholder").load("end.html");
+      });
+    </script>
+    <!--end of End bar-->
+  </body>
+</html>
+
+      <!--
+          <div class="col-lg-4 col-md-6 special-grid Students">
+            <a href="receive copy.html" target="_blank">
+              <div class="gallery-single fix">
+                <img src="images/img-01.jpg" class="img-fluid" alt="Image" />
+                <div class="why-text">
+                  <h4>Students</h4>
+                  <p>You are a student of UiTM Segamat.</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-lg-4 col-md-6 special-grid Community">
+            <a href="receive copy 2.html" target="_blank">
+              <div class="gallery-single fix">
+                <img src="images/img-09.jpg" class="img-fluid" alt="Image" />
+                <div class="why-text">
+                  <h4>Community</h4>
+                  <p>You are a community member of Segamat district.</p>
+                </div>
+              </div>
+            </a>
+          </div>
+        -->
