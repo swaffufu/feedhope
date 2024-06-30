@@ -17,10 +17,10 @@ session_start();
       <div class="collapse navbar-collapse" id="navbars-rs-food">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="/foodheredotcom/feedhope/index.php">Home</a>
+            <a class="nav-link" href="/index.php">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/foodheredotcom/feedhope/foodbanks.html">Foodbanks</a>
+            <a class="nav-link" href="/foodbanks.html">Foodbanks</a>
           </li>
           <?php if (isset($_SESSION['user_id']) && isset($_SESSION['acctype']) && $_SESSION['acctype'] == 'Admin'): ?>
             <li class="nav-item">
@@ -37,7 +37,7 @@ session_start();
             </li>
           <?php else: ?>
             <li class="nav-item">
-              <a class="nav-link" href="/foodheredotcom/feedhope/loginpage.php">Register Now</a>
+              <a class="nav-link" href="/loginpage.php">Register Now</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="loginpage.php">Login</a>

@@ -47,20 +47,20 @@ if ($resultFoodBanks) {
         // Output different buttons based on user role
         switch ($userRole) {
             case 'Donor':
-                echo '<a class="btn btn-lg btn-circle btn-outline-new-white" href="/foodheredotcom/feedhope/donate.html">Donate</a>';
+                echo '<a class="btn btn-lg btn-circle btn-outline-new-white" href="/donate.html">Donate</a>';
                 break;
             case 'Volunteer':
-                echo '<a class="btn btn-lg btn-circle btn-outline-new-white" href="/foodheredotcom/feedhope/volunteer.php">Volunteer</a>';
+                echo '<a class="btn btn-lg btn-circle btn-outline-new-white" href="/volunteer.php">Volunteer</a>';
                 break;
             case 'Community':
             case 'Student':
-                echo '<a class="btn btn-lg btn-circle btn-outline-new-white" href="/foodheredotcom/feedhope/receive.html">Get Food</a>';
+                echo '<a class="btn btn-lg btn-circle btn-outline-new-white" href="/receive.html">Get Food</a>';
                 break;
             case 'Admin':
-                echo '<a class="btn btn-lg btn-circle btn-outline-new-white" href="http://localhost/foodheredotcom/feedhope/admin.php#foodbanks">Manage</a>';
+                echo '<a class="btn btn-lg btn-circle btn-outline-new-white" href="http://localhost/admin.php#foodbanks">Manage</a>';
                 break;
             case '':
-                echo '<a class="btn btn-lg btn-circle btn-outline-new-white" href="/foodheredotcom/feedhope/loginpage.php">Login for more</a>';
+                echo '<a class="btn btn-lg btn-circle btn-outline-new-white" href="/loginpage.php">Login for more</a>';
                 break;
         }
 
